@@ -6,6 +6,112 @@ body{
   background-position: center;
 }
 
+.openbtn1{
+  display:none;
+}
+
+
+#g-nav{
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position:fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+top:-120%;
+  left:0;
+width:100%;
+  height: 100vh;/*ナビの高さ*/
+background:rgb(255, 255, 255);
+  /*動き*/
+transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+  top: 0;
+}
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding-left: 0;
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+list-style: none;
+  text-align: center; 
+}
+
+#g-nav li a{
+color: rgb(2, 82, 17);
+text-decoration: none;
+padding:10px;
+display: block;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-size: 7vw;
+font-weight: bold;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 3vh;
+}
+
+.openbtn1{
+  position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+  top:10px;
+  /* right: 10px; */
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+
+.openbtn1 span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+background-color: rgb(235, 208, 2);
+  width: 45%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+
 .first-container{
   padding-bottom: 400px;
   /* background-image: url(./img/Pasted\ Graphic.png);
@@ -20,23 +126,24 @@ body{
 }
 
 a{
+  font-weight: bolder;
   display: inline-block;
-  color: #fff;
+  color: rgba(255, 204, 0, 1);
   text-decoration: none;
-  text-shadow: 1px 2px 3px #000000ae;
+  text-shadow: 0.5px 0.5px 0.5px #000000ae;
   padding: 10px;
   margin-left: 20px;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 a:hover{
-  color:  rgba(255, 204, 0, 1);
+  color:  #fff;
   transition: 0.5s;
 }
 
 .top-header> h1,h2,p{
   color: #fff;
-  text-shadow: 5px 6px 8px #000000ae;
+  text-shadow: 10px 10px 15px #000000ae;
 }
 
 .text>p{
@@ -49,7 +156,8 @@ a:hover{
   color: rgb(255, 255, 255);
   padding: 15px;
   width: 25%;
-  margin-left: 7%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 25px;
   text-shadow: 1px 2px 3px #000000ae;
   font-weight: bold;
@@ -69,9 +177,16 @@ a:hover{
   text-align: center;
 }
 
+.flecon{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .flex-container{
   display: flex;
   justify-content: space-around;
+  font-size: 5vh;
 }
 
 .first-text>h2{
@@ -87,6 +202,7 @@ a:hover{
   margin-left: auto;
   margin-right: auto;
   font-size: larger;
+  font-weight: bolder;
 }
 
 .logo{
@@ -255,21 +371,26 @@ footer{
   height: 100px;
   background-color:#fff;
   box-shadow: 0 -100px 200px;
-  padding: 50px;
+  padding: 70px;
+  padding-top: 15px;
+  padding-bottom: 20vh;
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-link>a{
+  font-size: 25px;
   color: black;
-  text-shadow: 0 0 0;
+  text-shadow: 1px 1px 1px rgb(189, 189, 189);
   font-weight: bolder;
   flex-direction:row;
   display: block;
   padding: 3px;
+  color: rgb(0, 0, 0);
 }
 
 .footer-link>a:hover{
-  color:  rgb(3, 144, 24);
+  color:  rgb(5, 98, 3);
   transition: 0.5s;
 }
 
@@ -282,12 +403,21 @@ footer{
 }
 
 @media(max-width:850px) {
+
+  
+.openbtn1{
+  display:block;
+}
+
+
   .link {
-    position: relative;
-    left: -20vw;
+    display: none;
   }
 
-    
+  .big-header {
+    font-size: 12vw;
+    margin-top: 30vh;
+}
 
   .link>a {
     font-size: larger;
@@ -295,6 +425,10 @@ footer{
 
   .first-container {
     text-align: center;
+  }
+
+  .first-text{
+    margin-top: 50vh;
   }
 
   .first-text>p{
@@ -311,7 +445,6 @@ footer{
 
   .green-button {
     position: relative;
-    left: -6%;
     width: 50%;
   }
 
@@ -391,5 +524,22 @@ footer{
     margin-left: auto;
     margin-right: auto;
   }
+
+  .circle{
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .footer-link>a{
+    font-size: 15px;
+  }
+
+}
+
+@media(max-width:500px){
+  .logo{
+    width: 50%;
+    
+  }  
 
 }

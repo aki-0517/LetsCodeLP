@@ -6,20 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let's Code</title>
   <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css"> -->
 </head>
 <body>
+  <div class="openbtn1"><span></span><span></span><span></span></div>
+
+<nav id="g-nav">
+  <ul>
+  <li><a href="#">コース一覧</a></li>  
+  <li><a href="#">卒業生の声</a></li>  
+  <li><a href="#">Let's Code<br>ホームページ</a></li>  
+  <li><a href="https://wao-letscode.com/">今すぐはじめる</a></li>  
+  </ul>
+</nav>
   <div class="first-container">
     <div class="link">
       <a href="index.html">コース一覧</a>
-      <a href="index.html">卒業生の声</a>
+      <a href="https://wao-letscode.com/">卒業生の声</a>
     </div>
     <img class="logo" src="./img/educ_logo-letscode.jpg">
     <div class="top-header">
       <h1 class="big-header">５秒で始める、<br>みなぎる実戦力。</h1>
-      <button onclick="loction.href=https;//wao-letscode.com/" class="green-button">今すぐ始める</button>
+      <form action="https://wao-letscode.com/">
+        <button class="green-button">今すぐ始める</button>
+      </form>
     </div>
     <div class="first-text">
-      <h2 class="flex-container"><div>わかる</div><div class="rotate">→</div><div>うごかす</div><div class="rotate">→</div><div>つくってみる</div></h2>
+      <div class="flecon">
+      <h2 class="flex-container"><div>わかる</div><div class="rotate">→</div><div>うごかす</div><div class="rotate">→</div><div>つくってみる</div></h2></div>
       <p>プログラミングは「プログラムを書いて実行結果を確認する」ことがとても大切です。
         解説を見て理解できるのは「ある程度まで」で、実際に書くことでわかっていくことがたくさんあります。「Let’s Code」では、「わかって」終わるのではなく、実際に手を「うごかす」ことで、より実践的な理解ができます。</p>
     </div>
@@ -73,8 +87,10 @@
       </div>
     </div>
     <div class="forth-container">
-      <h2>登録なしで今すぐ始める</h2>
-      <button href="./index.html" class="green-button button2">今すぐ始める</button>
+      <h2>登録なしでスタート！</h2>
+      <form action="https://wao-letscode.com/">
+        <button class="green-button">今すぐ始める</button>
+      </form>
     </div>
   </div>
   <footer>
@@ -85,5 +101,8 @@
       <a href="./index.html">Wao History</a>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<script src="./main.js"></script>
+
 </body>
 </html>
